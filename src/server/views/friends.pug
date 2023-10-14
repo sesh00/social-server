@@ -1,0 +1,8 @@
+doctype html
+html
+    head
+        title Friends Page
+    body
+        h1 User's Friends
+        each friend in friendsList
+            p #{friend.name} (#{friend.email}) - #{friend.status}

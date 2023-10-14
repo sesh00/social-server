@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "birthdate": "1990-05-15",
+      "email": "john@example.com",
+      "photo": "john.jpg",
+      "role": "user",
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "name": "Jane Doe",
+      "birthdate": "1992-08-20",
+      "email": "jane@example.com",
+      "photo": "jane.jpg",
+      "role": "user",
+      "status": "active"
+    },
+    {
+      "id": 3,
+      "name": "Admin User",
+      "birthdate": "1985-02-10",
+      "email": "admin@example.com",
+      "photo": "admin.jpg",
+      "role": "admin",
+      "status": "active"
+    }
+  ]
+}

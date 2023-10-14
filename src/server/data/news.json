@@ -1,0 +1,19 @@
+{
+  "news": [
+    {
+      "id": 1,
+      "userId": 1,
+      "text": "Exciting news from John!"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "text": "Jane just posted a photo!"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "text": "Admin shared an important update."
+    }
+  ]
+}

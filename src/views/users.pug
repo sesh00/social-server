@@ -1,0 +1,12 @@
+extends static/layout
+
+block content
+    h1 All Users
+    .user-grid
+        each user in users
+            .user-card
+                a(href=`/users/${user.id}`)
+                    img(src=`${user.photo}`, alt=`${user.name}'s photo`)
+                h4 #{user.name}
+                p Email: #{user.email}
+                p Role: #{user.role}

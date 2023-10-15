@@ -1,0 +1,17 @@
+extends static/layout
+
+block content
+    h1= user.name
+    img.user-photo(src=user.photo, alt=user.name)
+    p= user.info
+
+    h2 Friends
+    each friend, index in friends
+        p= `Friend ${index + 1}: ${friend.name}`
+
+    h2 News
+    each friend, index in friends
+        h3= `News from ${friend.name}`
+        ul
+            each newsItem in friend.news
+                li= `${friend.name}: ${newsItem.text}`

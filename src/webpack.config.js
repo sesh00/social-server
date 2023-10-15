@@ -5,15 +5,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
     mode: 'production',
     entry: {
-        main: path.resolve(__dirname, '../src/client/js/main.js'),
-        users: path.resolve(__dirname, '../src/client/js/users.js'),
-        friends: path.resolve(__dirname, '../src/client/js/friends.js'),
-        news: path.resolve(__dirname, '../src/client/js/news.js'),
-        styles: path.resolve(__dirname, '../src/client/styles/main.less'),
+        user: path.resolve(__dirname, '../src/js/user.js'),
+        styles: path.resolve(__dirname, '../src/styles/styles.less'),
     },
     output: {
         filename: 'js/[name].js',
-        path: path.resolve(__dirname, '../dist/client'),
+        path: path.resolve(__dirname, '../dist/js'),
         clean: true,
     },
     module: {
@@ -51,15 +48,35 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '../src/client/templates/index.pug'),
-            filename: 'templates/index.html',
+            template: path.resolve(__dirname, '../src/views/friends.pug'),
+            filename: 'views/friends.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, '../src/views/index.pug'),
+            filename: 'views/index.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, '../src/views/layout.pug'),
+            filename: 'views/layout.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, '../src/views/news.pug'),
+            filename: 'views/news.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, '../src/views/user.pug'),
+            filename: 'views/user.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, '../src/views/users.pug'),
+            filename: 'views/users.html',
         }),
         new MiniCssExtractPlugin({
             filename: 'styles/[name].css',
         }),
     ],
     devServer: {
-        contentBase: path.resolve(__dirname, '../dist/client'),
+        contentBase: path.resolve(__dirname, '../dist'),
         compress: true,
         port: 3000,
     },

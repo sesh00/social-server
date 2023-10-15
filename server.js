@@ -21,7 +21,7 @@ app.set('views', path.join(__dirname, 'src/views'));
 
 app.use('/styles', express.static(path.join(__dirname, 'dist/styles')));
 
-app.use('/js',express.static(path.join(__dirname, 'dist/js')));
+app.use('/js',express.static(path.join(__dirname, 'src/js')));
 
 app.use('/users', usersRouter(usersData, friendsData, newsData));
 app.use('/friends', friendsRouter(friendsData));

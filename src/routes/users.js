@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const fs = require('fs');
 
 module.exports = (usersData, friendsData, newsData) => {
     const getFriendsByUserId = (userId) => {
@@ -37,6 +38,28 @@ module.exports = (usersData, friendsData, newsData) => {
             res.status(404).send('User not found');
         }
     });
+
+    router.post('/:id', (req, res) => {
+        const userId = parseInt(req.params.id);
+        const userIndex = usersData.users.findIndex(user => user.id === userId);
+
+        if (userIndex !== -1) {
+            // Обновляем данные пользователя
+            usersData.users[userIndex] = { ...usersData.users[userIndex], ...req.body };
+
+            fs.writeFile('src/data/users.json', JSON.stringify(usersData, null, 2), (err) => {
+                if (err) {
+                    console.error('Ошибка при записи в users.json', err);
+                    res.status(500).send('Internal Server Error');
+                } else {
+                    res.status(200).send('User data updated successfully.');
+                }
+            });
+        } else {
+            res.status(404).send('User not found');
+        }
+    });
+
 
     return router;
 };

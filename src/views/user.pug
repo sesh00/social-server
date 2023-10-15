@@ -16,14 +16,60 @@ block content
             each newsItem in friend.news
                 li= `${friend.name}: ${newsItem.text}`
 
+    button#openModalBtn(type="button") Изменить данные пользователя
+
+    div#myModal(style="display: none; position: fixed; top: -100vh; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);")
+        div#myModalContent(style="position: relative; top: 20vh; width: 80%; margin: 0 auto; background-color: white; padding: 20px; border-radius: 8px;")
+            span#closeModalBtn(style="cursor: pointer; font-size: 20px; position: absolute; top: 10px; right: 10px;") ×
+            h2 Изменение данных пользователя
+            form#editUserForm
+                input#editUserName(type="text", placeholder="Имя", name="name")
+                input#editUserInfo(type="text", placeholder="Информация", name="info")
+                input#editUserBirthday(type="text", placeholder="День рождения", name="birthday")
+                input#editUserEmail(type="email", placeholder="Email", name="email")
+                input#editUserRole(type="text", placeholder="Роль", name="role")
+                input#editUserStatus(type="text", placeholder="Статус", name="status")
+
+                button(type="submit") Сохранить изменения
+
     script(src="https://code.jquery.com/jquery-3.6.4.min.js")
     script.
-        if (typeof jQuery === 'undefined') {
-            console.error('jQuery is not loaded!');
-        } else {
-            // Ваш код, использующий jQuery
-            $(document).ready(function () {
-                $("h2").text("Проверка 1");
-                jQuery("p").text("Проверка 2");
+
+        const user = !{JSON.stringify(user)};
+
+        $(document).ready(function () {
+            // Показать модальное окно по кнопке
+            $("#openModalBtn").click(function () {
+                $("#myModal").css({"display": "block", "top": "0"});
             });
-        }
+
+            // Закрыть модальное окно по кнопке "Закрыть"
+            $("#closeModalBtn").click(function () {
+                $("#myModal").css({"display": "none", "top": "-100vh"});
+            });
+
+            // Обработка отправки формы
+            $("#editUserForm").submit(function (e) {
+                e.preventDefault();
+
+                // Получаем данные из формы
+                const formData = $(this).serialize();
+
+                // Отправляем POST-запрос с помощью AJAX
+                $.ajax({
+                    type: 'POST',
+                    url: `/users/${user.id}`,
+                    data: formData,
+                    success: function (response) {
+                        console.log('Данные успешно обновлены');
+                        // Закрываем модальное окно
+                        $("#myModal").css({"display": "none", "top": "-100vh"});
+                        // Обновляем страницу, чтобы отобразить изменения
+                        location.reload();
+                    },
+                    error: function (error) {
+                        console.error('Произошла ошибка при обновлении данных пользователя', error);
+                    }
+                });
+            });
+        });

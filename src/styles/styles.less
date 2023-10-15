@@ -63,3 +63,30 @@
     height: auto;
     border-radius: 20%; /* Добавляем скругление углов для круглой формы */
 }
+
+#myModal {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 300px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    #myModalContent {
+        position: relative;
+
+        #closeModalBtn {
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    }
+}
+
+#openModalBtn {
+    cursor: pointer;
+}

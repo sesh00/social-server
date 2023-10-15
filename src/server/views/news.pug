@@ -1,16 +1,14 @@
-doctype html
-html
-    head
-        title All News
-    body
-        h1 All News
-        table
-            thead
+extends layout.pug
+
+block content
+    h1 All News
+    table
+        thead
+            tr
+                th News Text
+                th User ID
+        tbody
+            each n in news
                 tr
-                    th News Text
-                    th User ID
-            tbody
-                each n in news
-                    tr
-                        td #{n.text}
-                        td #{n.userId}
+                    td #{n.text}
+                    td #{n.userId}

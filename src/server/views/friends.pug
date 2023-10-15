@@ -1,8 +1,16 @@
-doctype html
-html
-    head
-        title Friends Page
-    body
-        h1 User's Friends
-        each friend in friendsList
-            p #{friend.name} (#{friend.email}) - #{friend.status}
+extends layout.pug
+
+block content
+    h1 User's Friends
+    table
+        thead
+            tr
+                th Name
+                th Email
+                th Status
+        tbody
+            each friend in friends
+                tr
+                    td #{friend.name}
+                    td #{friend.email}
+                    td #{friend.status}

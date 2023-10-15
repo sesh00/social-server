@@ -1,18 +1,11 @@
-doctype html
-html
-    head
-        title All Users
-    body
-        h1 All Users
-        table
-            thead
-                tr
-                    th Name
-                    th Email
-                    th Role
-            tbody
-                each user in users
-                    tr
-                        td #{user.name}
-                        td #{user.email}
-                        td #{user.role}
+extends layout.pug
+
+block content
+    h1 All Users
+    .user-grid
+        each user in users
+            .user-card
+                img(src=`${user.photo}`, alt=`${user.name}'s photo`)
+                h4 #{user.name}
+                p Email: #{user.email}
+                p Role: #{user.role}

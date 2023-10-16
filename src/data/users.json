@@ -2,17 +2,18 @@
   "users": [
     {
       "id": 1,
-      "name": "Дейенерис Таргариен",
-      "info": "Персонаж вымышленного мира серии книг «Песнь Льда»",
+      "name": "Эрнест",
+      "info": "mm",
       "birthdate": "22-09-2023",
-      "email": "alisa@example.com",
+      "email": "ernest.sagidullin@yandex.ru",
       "photo": "https://w.forfun.com/fetch/72/72b32c2fac9ff067187b90a78fbd2083.jpeg",
-      "role": "user",
-      "status": "active"
+      "role": "mmm",
+      "status": "nnn",
+      "birthday": "10.11.2003"
     },
     {
       "id": 2,
-      "name": "Эрнест",
+      "name": "Сагидуллин Эрнест Рустемович",
       "info": "mm",
       "birthdate": "22-09-2023",
       "email": "ernestrsage@gmail.com",

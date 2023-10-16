@@ -6,6 +6,9 @@ module.exports = {
     mode: 'production',
     entry: {
         user: path.resolve(__dirname, '../src/js/user.js'),
+        friends: path.resolve(__dirname, '../src/routes/friends.js'),
+        news: path.resolve(__dirname, '../src/routes/news.js'),
+        users: path.resolve(__dirname, '../src/routes/users.js'),
         styles: path.resolve(__dirname, '../src/styles/styles.less'),
     },
     output: {
@@ -24,6 +27,7 @@ module.exports = {
             },
             {
                 test: /\.less$/,
+                exclude: /node_modules/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
@@ -32,49 +36,49 @@ module.exports = {
             },
             {
                 test: /\.pug$/,
+                exclude: /node_modules/,
                 use: [
                     'html-loader',
                     'pug-html-loader',
                 ],
             },
             {
-                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                test: /\.(json|svg|jpg|jpeg|gif)$/i,
+                exclude: /node_modules/,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'static/images/[name][ext]',
+                    filename: 'data/[name][ext]',
                 },
             },
         ],
     },
     plugins: [
+
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '../src/views/friends.pug'),
-            filename: 'views/friends.html',
-        }),
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '../src/views/index.pug'),
+            template: path.resolve(__dirname, '../src/views/static/index.pug'),
             filename: 'views/index.html',
         }),
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '../src/views/layout.pug'),
+            template: path.resolve(__dirname, '../src/views/static/layout.pug'),
             filename: 'views/layout.html',
-        }),
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '../src/views/news.pug'),
-            filename: 'views/news.html',
-        }),
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '../src/views/user.pug'),
-            filename: 'views/user.html',
-        }),
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '../src/views/users.pug'),
-            filename: 'views/users.html',
         }),
         new MiniCssExtractPlugin({
             filename: 'styles/[name].css',
         }),
     ],
+    resolve: {
+        fallback: {
+            fs: false, // или 'fs'
+            crypto: require.resolve('crypto-browserify'),
+            http: require.resolve('stream-http'),
+            async_hooks: require.resolve('async_hooks'),
+            net: false, // или 'net'
+
+        },
+        alias: {
+            '/styles/styles.css': path.resolve(__dirname, 'styles/styles.less'),
+        }
+    },
     devServer: {
         contentBase: path.resolve(__dirname, '../dist'),
         compress: true,

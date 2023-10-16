@@ -1,3 +1,15 @@
 {
-  "presets": ["@babel/env"]
+  "presets": ["@babel/preset-env"],
+  "env": {
+    "development": {
+      "plugins": [
+        "module-resolver"
+      ]
+    },
+    "production": {
+      "plugins": [
+        "module-resolver"
+      ]
+    }
+  }
 }

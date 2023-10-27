@@ -3,7 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    mode: 'production',
+    target: 'web',
+    mode: 'development',
     entry: {
         user: path.resolve(__dirname, '../src/js/user.js'),
         friends: path.resolve(__dirname, '../src/routes/friends.js'),
@@ -67,19 +68,13 @@ module.exports = {
         }),
     ],
     resolve: {
-        fallback: {
-            fs: false, // или 'fs'
-            crypto: require.resolve('crypto-browserify'),
-            http: require.resolve('stream-http'),
-            async_hooks: require.resolve('async_hooks'),
-            net: false, // или 'net'
 
-        },
         alias: {
             '/styles/styles.css': path.resolve(__dirname, 'styles/styles.less'),
         }
     },
     devServer: {
+        liveReload: false,
         contentBase: path.resolve(__dirname, '../dist'),
         compress: true,
         port: 3000,

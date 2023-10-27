@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build-webpack": "concurrently \"webpack --config src/webpack.config.js\" \"npm run start-server\"",
+    "build-webpack": "concurrently  \"webpack --config src/webpack.config.js\" \"npm run start-server\"",
     "build-gulp": "concurrently \"gulp --gulpfile src/gulpfile.js\" \"npm run start-server\"",
     "start-server": "node server.js"
   },

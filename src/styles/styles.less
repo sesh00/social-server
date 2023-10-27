@@ -1,9 +1,13 @@
+@backcol: #333;
+.border-radius(@radius: 5px) {
+    border-radius: @radius;
+}
 
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #333;
+    background-color: @backcol;
     padding: 10px;
     width: 100%;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
@@ -37,7 +41,7 @@
 
 .user-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Увеличиваем ширину пользователей */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
     justify-content: center;
 }
@@ -52,16 +56,16 @@
 }
 
 .user-card img {
-    max-width: 90%; /* Уменьшаем максимальную ширину до 80% от родительского контейнера */
+    max-width: 90%;
     height: auto;
-    border-radius: 20%; /* Добавляем скругление углов для круглой формы */
-    margin-bottom: 10px; /* Добавляем отступ снизу */
+    .border-radius(20%);
+    margin-bottom: 10px;
 }
 
 .user-photo {
-    max-width: 25%; /* Уменьшаем максимальную ширину изображения до 50% от родительского контейнера */
+    max-width: 25%;
     height: auto;
-    border-radius: 20%; /* Добавляем скругление углов для круглой формы */
+    border-radius: 20%;
 }
 
 #myModal {

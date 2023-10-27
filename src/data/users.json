@@ -2,29 +2,27 @@
   "users": [
     {
       "id": 1,
-      "name": "Эрнест",
-      "info": "mm",
+      "name": "Дейенерис Таргариен",
+      "info": "Персонаж вымышленного мира серии книг «Песнь Льда»",
       "birthdate": "22-09-2023",
-      "email": "ernest.sagidullin@yandex.ru",
+      "email": "alisa@example.com",
       "photo": "https://w.forfun.com/fetch/72/72b32c2fac9ff067187b90a78fbd2083.jpeg",
-      "role": "mmm",
-      "status": "nnn",
-      "birthday": "10.11.2003"
+      "role": "user",
+      "status": "active"
     },
     {
       "id": 2,
-      "name": "Сагидуллин Эрнест Рустемович",
-      "info": "mm",
+      "name": "Джон Сноу",
+      "info": "Персонаж серии фэнтези-романов «Песнь Льда и Огня»",
       "birthdate": "22-09-2023",
-      "email": "ernestrsage@gmail.com",
+      "email": "alisa@example.com",
       "photo": "https://w.forfun.com/fetch/bf/bfcfbdcc0d100a30c11177d0bf0c0be5.jpeg",
-      "role": "mmm",
-      "status": "nnn",
-      "birthday": "10.11.2003"
+      "role": "user",
+      "status": "active"
     },
     {
       "id": 3,
-      "name": "Тирион Ланнистер",
+      "name": "Тирион ",
       "info": "Персонаж романов американского писателя-фантаста",
       "birthdate": "22-09-2023",
       "email": "alisa@example.com",

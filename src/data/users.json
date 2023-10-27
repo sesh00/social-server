@@ -3,12 +3,13 @@
     {
       "id": 1,
       "name": "Дейенерис Таргариен",
-      "info": "Персонаж вымышленного мира серии книг «Песнь Льда»",
+      "info": "Персонаж серии фэнтези-романов «Песнь Льда и Огня»",
       "birthdate": "22-09-2023",
       "email": "alisa@example.com",
       "photo": "https://w.forfun.com/fetch/72/72b32c2fac9ff067187b90a78fbd2083.jpeg",
-      "role": "user",
-      "status": "active"
+      "role": "admin",
+      "status": "active",
+      "password": "password4"
     },
     {
       "id": 2,
@@ -17,28 +18,31 @@
       "birthdate": "22-09-2023",
       "email": "alisa@example.com",
       "photo": "https://w.forfun.com/fetch/bf/bfcfbdcc0d100a30c11177d0bf0c0be5.jpeg",
-      "role": "user",
-      "status": "active"
+      "role": "admin",
+      "status": "active",
+      "password": "password2"
     },
     {
       "id": 3,
-      "name": "Тирион ",
-      "info": "Персонаж романов американского писателя-фантаста",
+      "name": "Тирион",
+      "info": "Персонаж серии фэнтези-романов «Песнь Льда и Огня»",
       "birthdate": "22-09-2023",
       "email": "alisa@example.com",
       "photo": "https://w.forfun.com/fetch/ce/ce279a24d286a3e8b21eef1f48af2aaf.jpeg?w=1470&r=0.5625",
       "role": "user",
-      "status": "active"
+      "status": "active",
+      "password": "password3"
     },
     {
       "id": 4,
       "name": "Эддард Старк",
-      "info": "Персонаж романа американского писателя-фантаста",
+      "info": "Персонаж серии фэнтези-романов «Песнь Льда и Огня»",
       "birthdate": "22-09-2023",
       "email": "alisa@example.com",
       "photo": "https://w.forfun.com/fetch/c7/c72bbba65a677df8ef22edb2161686a4.jpeg",
       "role": "user",
-      "status": "active"
+      "status": "active",
+      "password": "password4"
     },
     {
       "id": 5,
@@ -48,137 +52,8 @@
       "email": "alisa@example.com",
       "photo": "https://w.forfun.com/fetch/2f/2feee713e0ba476663856cba5d539405.jpeg",
       "role": "user",
-      "status": "active"
-    },
-    {
-      "id": 6,
-      "name": "Санса Старк",
-      "info": "Персонаж серии фэнтези-романов «Песнь Льда и Огня»",
-      "birthdate": "22-09-2023",
-      "email": "alisa@example.com",
-      "photo": "https://w.forfun.com/fetch/91/91ef855bef2fedee5c77921a351f3bca.jpeg",
-      "role": "user",
-      "status": "active"
-    },
-    {
-      "id": 7,
-      "name": "Арья Старк",
-      "info": "Персонаж серии фэнтези-романов «Песнь Льда и Огня»",
-      "birthdate": "22-09-2023",
-      "email": "alisa@example.com",
-      "photo": "https://w.forfun.com/fetch/37/37c400f7e5c0ae120cea69acbad3082a.jpeg",
-      "role": "user",
-      "status": "active"
-    },
-    {
-      "id": 8,
-      "name": "Джейме Ланнистер",
-      "info": "Персонаж серии фэнтези-романов «Песнь Льда и Огня»",
-      "birthdate": "22-09-2023",
-      "email": "alisa@example.com",
-      "photo": "https://w.forfun.com/fetch/f8/f8ca5202017098bda72d02fa86b73597.jpeg",
-      "role": "user",
-      "status": "active"
-    },
-    {
-      "id": 9,
-      "name": "Петир Бейлиш",
-      "info": "Персонаж серии фэнтези-романов «Песнь Льда и Огня»",
-      "birthdate": "22-09-2023",
-      "email": "alisa@example.com",
-      "photo": "https://w.forfun.com/fetch/b1/b17ddbde098ce2a00eb034d2810f8241.jpeg",
-      "role": "user",
-      "status": "active"
-    },
-    {
-      "id": 10,
-      "name": "Сандор Клиган",
-      "info": "Персонаж серии фэнтези-романов «Песнь Льда и Огня»",
-      "birthdate": "22-09-2023",
-      "email": "alisa@example.com",
-      "photo": "https://w.forfun.com/fetch/89/8955f517c855b9f2fe5c5229e1546fe9.jpeg",
-      "role": "user",
-      "status": "active"
-    },
-    {
-      "id": 11,
-      "name": "Теон Грейджой",
-      "info": "Персонаж серии фэнтези-романов «Песнь Льда и Огня»",
-      "birthdate": "22-09-2023",
-      "email": "alisa@example.com",
-      "photo": "https://w.forfun.com/fetch/98/9823c85c909eeebbada08701b5edacd1.jpeg",
-      "role": "user",
-      "status": "active"
-    },
-    {
-      "id": 12,
-      "name": "Джорах Мормонт",
-      "info": "Персонаж серии фэнтези-романов «Песнь Льда и Огня»",
-      "birthdate": "22-09-2023",
-      "email": "alisa@example.com",
-      "photo": "https://w.forfun.com/fetch/c7/c715ea66f5fbad138ed5ca643eb302c9.jpeg",
-      "role": "user",
-      "status": "active"
-    },
-    {
-      "id": 13,
-      "name": "Бриенна Тарт",
-      "info": "Персонаж серии фэнтези-романов «Песнь Льда и Огня»",
-      "birthdate": "22-09-2023",
-      "email": "alisa@example.com",
-      "photo": "https://w.forfun.com/fetch/fc/fc1cdaf0680a50e083655ee4e7f52cd2.jpeg",
-      "role": "user",
-      "status": "active"
-    },
-    {
-      "id": 14,
-      "name": "Кейтилин Старк",
-      "info": "Персонаж серии фэнтези-романов «Песнь Льда и Огня»",
-      "birthdate": "22-09-2023",
-      "email": "alisa@example.com",
-      "photo": "https://w.forfun.com/fetch/d6/d6a4cd77cafa25ed95978ba0692bb8af.jpeg?w=1470&r=0.5625",
-      "role": "user",
-      "status": "active"
-    },
-    {
-      "id": 15,
-      "name": "Бран Старк",
-      "info": "Персонаж серии фэнтези-романов «Песнь Льда и Огня»",
-      "birthdate": "22-09-2023",
-      "email": "alisa@example.com",
-      "photo": "https://w.forfun.com/fetch/b0/b00b99f4eea769bb2deab9410ab4affc.jpeg",
-      "role": "user",
-      "status": "active"
-    },
-    {
-      "id": 16,
-      "name": "Сэмвелл Тарли",
-      "info": "Персонаж серии фэнтези-романов «Песнь Льда и Огня»",
-      "birthdate": "22-09-2023",
-      "email": "alisa@example.com",
-      "photo": "https://w.forfun.com/fetch/c4/c401cad448813918eabbfafe735eae7f.jpeg",
-      "role": "user",
-      "status": "active"
-    },
-    {
-      "id": 17,
-      "name": "Давос Сиворт",
-      "info": "Персонаж серии фэнтези-романов «Песнь Льда и Огня»",
-      "birthdate": "22-09-2023",
-      "email": "alisa@example.com",
-      "photo": "https://w.forfun.com/fetch/b9/b9105736561a027b16118c6892667472.jpeg?w=1470&r=0.5625",
-      "role": "user",
-      "status": "active"
-    },
-    {
-      "id": 18,
-      "name": "Подрик Пейн",
-      "info": "Персонаж серии фэнтези-романов «Песнь Льда и Огня»",
-      "birthdate": "22-09-2023",
-      "email": "alisa@example.com",
-      "photo": "http://mobimg.b-cdn.net/v3/fetch/97/97fa5c38f5114e50242471ce05067900.jpeg",
-      "role": "user",
-      "status": "active"
+      "status": "active",
+      "password": "password4"
     }
   ]
 }

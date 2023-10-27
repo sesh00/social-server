@@ -27,7 +27,6 @@ module.exports = (usersData, friendsData, newsData) => {
             const userFriends = getFriendsByUserId(userId);
             const userNews = getNewsByFriendsIds(userFriends.map(friend => friend.id));
 
-            // Ассоциируем имена друзей с их новостями
             const friendsWithNews = userFriends.map(friend => {
                 const news = userNews.filter(newsItem => newsItem.userId === friend.id);
                 return { ...friend, news };
@@ -39,12 +38,51 @@ module.exports = (usersData, friendsData, newsData) => {
         }
     });
 
+
+    router.post('/register', (req, res) => {
+        const { name, email, password } = req.body;
+
+        const existingUser = usersData.users.find(user => user.email === email);
+        if (existingUser) {
+            return res.status(400).json({ error: 'Пользователь с таким email уже существует' });
+        }
+
+        const newUser = {
+            id: usersData.users.length + 1,
+            name,
+            email,
+            password,
+        };
+
+        usersData.users.push(newUser);
+
+        fs.writeFile('src/data/users.json', JSON.stringify(usersData, null, 2), (err) => {
+            if (err) {
+                console.error('Ошибка при записи в users.json', err);
+                res.status(500).send('Internal Server Error');
+            } else {
+                res.status(200).json({ success: true, message: 'Пользователь успешно зарегистрирован' });
+            }
+        });
+    });
+
+    router.post('/login', (req, res) => {
+        const { email, password } = req.body;
+        console.log(email);
+        console.log(password);
+        const user = usersData.users.find(user => user.email === email && user.password === password);
+        if (user) {
+            res.status(200).json({ success: true, message: 'Вход выполнен успешно' });
+        } else {
+            res.status(401).json({ error: 'Неправильный email или пароль' });
+        }
+    });
+
     router.post('/:id', (req, res) => {
         const userId = parseInt(req.params.id);
         const userIndex = usersData.users.findIndex(user => user.id === userId);
 
         if (userIndex !== -1) {
-            // Обновляем данные пользователя
             usersData.users[userIndex] = { ...usersData.users[userIndex], ...req.body };
 
             fs.writeFile('src/data/users.json', JSON.stringify(usersData, null, 2), (err) => {
@@ -59,7 +97,6 @@ module.exports = (usersData, friendsData, newsData) => {
             res.status(404).send('User not found');
         }
     });
-
 
     return router;
 };

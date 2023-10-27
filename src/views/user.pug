@@ -26,9 +26,14 @@ block content
                 input#editUserName(type="text", placeholder="Имя", name="name", value=user.name, required)
                 input#editUserInfo(type="text", placeholder="Информация", name="info", value=user.info, required)
                 input#editUserBirthday(type="text", placeholder="День рождения", name="birthdate", value=user.birthdate, required)
-                input#editUserEmail(type="email", placeholder="Email", name="email", value=user.email,required)
-                input#editUserRole(type="text", placeholder="Роль", name="role", value=user.role, required)
-                input#editUserStatus(type="text", placeholder="Статус", name="status", value=user.status,required)
+                input#editUserEmail(type="email", placeholder="Email", name="email", value=user.email, required)
+                select#editUserRole(name="role", required)
+                    option(value="user", selected=user.role==="user") Пользователь
+                    option(value="admin", selected=user.role==="admin") Администратор
+                select#editUserStatus(name="status", required)
+                    option(value="active", selected=user.status==="active") Активный
+                    option(value="banned", selected=user.status==="banned") Заблокированный
+                input#editUserPassword(type="text", placeholder="Пароль", name="password", value=user.password, required)
 
                 button(type="submit") Сохранить изменения
 

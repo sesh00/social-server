@@ -38,9 +38,8 @@ module.exports = (usersData, friendsData, newsData) => {
         }
     });
 
-
     router.post('/register', (req, res) => {
-        const { name, email, password } = req.body;
+        const { name, info, birthdate, email, password } = req.body;
 
         const existingUser = usersData.users.find(user => user.email === email);
         if (existingUser) {
@@ -49,9 +48,14 @@ module.exports = (usersData, friendsData, newsData) => {
 
         const newUser = {
             id: usersData.users.length + 1,
-            name,
-            email,
-            password,
+            name: name,
+            info: info,
+            birthdate: birthdate,
+            email: email,
+            photo: 'https://w.forfun.com/fetch/17/17d767857f1841474ccace158115b032.jpeg?w=2200',
+            role: 'user',
+            status: 'active',
+            password: password,
         };
 
         usersData.users.push(newUser);
@@ -65,6 +69,7 @@ module.exports = (usersData, friendsData, newsData) => {
             }
         });
     });
+
 
     router.post('/login', (req, res) => {
         const { email, password } = req.body;

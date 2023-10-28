@@ -25,7 +25,7 @@ block content
             form#editUserForm
                 input#editUserName(type="text", placeholder="Имя", name="name", value=user.name, required)
                 input#editUserInfo(type="text", placeholder="Информация", name="info", value=user.info, required)
-                input#editUserBirthday(type="text", placeholder="День рождения", name="birthdate", value=user.birthdate, required)
+                input#editUserBirthday(type="date", placeholder="День рождения", name="birthdate", value=user.birthdate, required)
                 input#editUserEmail(type="email", placeholder="Email", name="email", value=user.email, required)
                 select#editUserRole(name="role", required)
                     option(value="user", selected=user.role==="user") Пользователь

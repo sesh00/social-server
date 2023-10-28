@@ -11,4 +11,20 @@ block content
                 p Email: #{user.email}
                 p Role: #{user.role}
                 p Status: #{user.status}
-                p Birthday: #{user.birthdate}
+                p.birthday(data-date=JSON.stringify(user.birthdate)) #{user.birthdate}
+
+    script(src="https://code.jquery.com/jquery-3.6.4.min.js")
+    script.
+        $(document).ready(function() {
+            $('.birthday').each(function() {
+                const dateString = JSON.parse($(this).data('date'));
+                const formattedDate = formatDate(dateString);
+                $(this).text(formattedDate);
+            });
+
+            function formatDate(dateString) {
+                const options = { month: 'numeric', day: 'numeric', year: 'numeric' };
+                const date = new Date(dateString);
+                return date.toLocaleDateString('en-US', options).replace(/\//g, '.');
+            }
+        });

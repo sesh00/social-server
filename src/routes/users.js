@@ -75,7 +75,7 @@ module.exports = (usersData, friendsData, newsData) => {
             info: info,
             birthdate: birthdate,
             email: email,
-            photo: 'https://w.forfun.com/fetch/17/17d767857f1841474ccace158115b032.jpeg?w=2200',
+            photo: 'https://w.forfun.com/fetch/17/17d767857f1841474ccace158115b032.jpeg',
             role: 'user',
             status: 'active',
             password: password,

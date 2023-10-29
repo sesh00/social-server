@@ -58,35 +58,35 @@
     {
       "id": 6,
       "name": "Эрнест",
-      "info": "mm",
+      "info": "цуу",
       "birthdate": "2023-10-12",
       "email": "ernestrsage@gmail.com",
       "photo": "https://w.forfun.com/fetch/17/17d767857f1841474ccace158115b032.jpeg?w=2200",
       "role": "user",
       "status": "active",
-      "password": "123"
+      "password": "1234"
     },
     {
       "id": 7,
-      "name": "Эрнест",
-      "info": "mm",
-      "birthdate": "2023-10-20",
-      "email": "ernest.sagidullin@yandex.ru",
+      "name": "Сагидуллин Эрнест Рустемович",
+      "info": "цуу",
+      "birthdate": "2023-10-18",
+      "email": "aisa@example.com",
       "photo": "https://w.forfun.com/fetch/17/17d767857f1841474ccace158115b032.jpeg?w=2200",
       "role": "user",
       "status": "active",
-      "password": "123"
+      "password": "password4"
     },
     {
       "id": 8,
       "name": "Эрнест",
       "info": "mm",
-      "birthdate": "2023-10-25",
-      "email": "ersagidullin@stud.eltech.ru",
+      "birthdate": "2023-09-26",
+      "email": "alis@example.com",
       "photo": "https://w.forfun.com/fetch/17/17d767857f1841474ccace158115b032.jpeg?w=2200",
       "role": "user",
       "status": "active",
-      "password": "123"
+      "password": "1"
     }
   ]
 }

@@ -38,12 +38,13 @@ module.exports = (usersData, friendsData, newsData) => {
         }
     });
 
+    // router.post('/register', ...)
     router.post('/register', (req, res) => {
         const { name, info, birthdate, email, password } = req.body;
 
         const existingUser = usersData.users.find(user => user.email === email);
         if (existingUser) {
-            return res.status(400).json({ error: 'Пользователь с таким email уже существует' });
+            return res.status(400).json({ error: 'User with this email already exists' });
         }
 
         const newUser = {
@@ -62,26 +63,29 @@ module.exports = (usersData, friendsData, newsData) => {
 
         fs.writeFile('src/data/users.json', JSON.stringify(usersData, null, 2), (err) => {
             if (err) {
-                console.error('Ошибка при записи в users.json', err);
+                console.error('Error writing to users.json', err);
                 res.status(500).send('Internal Server Error');
             } else {
-                res.status(200).json({ success: true, message: 'Пользователь успешно зарегистрирован' });
+                // Возвращаем userId в ответе
+                res.status(200).json({ success: true, message: 'User registered successfully', userId: newUser.id });
             }
         });
     });
 
-
+// router.post('/login', ...)
     router.post('/login', (req, res) => {
         const { email, password } = req.body;
         console.log(email);
         console.log(password);
         const user = usersData.users.find(user => user.email === email && user.password === password);
         if (user) {
-            res.status(200).json({ success: true, message: 'Вход выполнен успешно' });
+            // Возвращаем userId в ответе
+            res.status(200).json({ success: true, message: 'Вход выполнен успешно', userId: user.id });
         } else {
             res.status(401).json({ error: 'Неправильный email или пароль' });
         }
     });
+
 
     router.post('/:id', (req, res) => {
         const userId = parseInt(req.params.id);

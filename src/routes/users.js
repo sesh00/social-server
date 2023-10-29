@@ -17,6 +17,36 @@ module.exports = (usersData, friendsData, newsData) => {
     };
 
 
+    router.get('/:id/news', (req, res) => {
+        const userId = parseInt(req.params.id);
+        const user = usersData.users.find((user) => user.id === userId);
+
+        if (user) {
+            const userFriends = getFriendsByUserId(userId);
+            const friendIds = userFriends.map((friend) => friend.id);
+
+            const allFriendIds = [...friendIds, userId];
+
+            const userAndFriendsNews = newsData.news
+                .filter((newsItem) => allFriendIds.includes(newsItem.userId))
+                .map((newsItem) => {
+                    const newsUser = usersData.users.find((u) => u.id === newsItem.userId);
+                    return { user: newsUser, text: newsItem.text};
+                });
+
+            res.json({news: userAndFriendsNews });
+        } else {
+            res.status(404).json({ error: 'User not found' });
+        }
+    });
+
+
+
+
+
+
+
+
     router.post('/:userId/friends', (req, res) => {
         const currentUserId = parseInt(req.body.currentId);
         const friendId = parseInt(req.body.friendId);

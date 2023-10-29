@@ -40,11 +40,31 @@ module.exports = (usersData, friendsData, newsData) => {
         }
     });
 
+    router.post('/:userId/publish', (req, res) => {
+        const userId = parseInt(req.params.userId);
+        const content = req.body.content;  // Используйте req.body.content для получения данных из тела запроса
 
+        if (userId !== undefined && content) {
+            const newsItem = {
+                id: newsData.news.length + 1,
+                userId: userId,
+                text: content,
+            };
 
+            newsData.news.push(newsItem);
 
-
-
+            fs.writeFile('src/data/news.json', JSON.stringify(newsData, null, 2), (err) => {
+                if (err) {
+                    console.error('Error writing to news.json', err);
+                    res.status(500).send('Internal Server Error');
+                } else {
+                    res.status(200).json({ success: true, message: 'News published successfully' });
+                }
+            });
+        } else {
+            res.status(400).json({ error: 'Invalid user or content' });
+        }
+    });
 
 
     router.post('/:userId/friends', (req, res) => {
@@ -62,6 +82,7 @@ module.exports = (usersData, friendsData, newsData) => {
             }
 
             const newFriendship = {
+                id: friendsData.friends.length + 1,
                 userId: currentUserId,
                 friendId: friendId,
             };
@@ -153,7 +174,6 @@ module.exports = (usersData, friendsData, newsData) => {
         }
     });
 
-    // router.post('/register', ...)
     router.post('/register', (req, res) => {
         const { name, info, birthdate, email, password } = req.body;
 

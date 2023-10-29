@@ -57,14 +57,14 @@
     },
     {
       "id": 6,
-      "name": "Эрнест",
-      "info": "это я",
-      "birthdate": "2023-10-11",
-      "email": "ernestrsage@gmail.com",
+      "name": "э",
+      "info": "это ",
+      "birthdate": "2023-10-15",
+      "email": "ernestrsag@egmail.com",
       "photo": "https://w.forfun.com/fetch/17/17d767857f1841474ccace158115b032.jpeg",
-      "role": "admin",
-      "status": "active",
-      "password": "123"
+      "role": "user",
+      "status": "banned",
+      "password": "12"
     }
   ]
 }

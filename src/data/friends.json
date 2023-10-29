@@ -34,14 +34,6 @@
       "id": 10,
       "userId": 4,
       "friendId": 5
-    },
-    {
-      "userId": 2,
-      "friendId": 5
-    },
-    {
-      "userId": 2,
-      "friendId": 1
     }
   ]
 }

@@ -20,6 +20,10 @@ module.exports = (usersData, friendsData, newsData) => {
         res.render('users', { users: usersData.users });
     });
 
+    router.get('/all', (req, res) => {
+        res.json(usersData.users);
+    });
+
     router.get('/:id/details', (req, res) => {
         const userId = parseInt(req.params.id);
         const user = usersData.users.find(user => user.id === userId);

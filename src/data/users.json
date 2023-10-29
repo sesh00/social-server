@@ -153,6 +153,28 @@
       "role": "user",
       "status": "active",
       "password": "123"
+    },
+    {
+      "id": 15,
+      "name": "Эрнест",
+      "info": "mm",
+      "birthdate": "2023-10-12",
+      "email": "ernest.sadullin@yandex.ru",
+      "photo": "https://w.forfun.com/fetch/17/17d767857f1841474ccace158115b032.jpeg?w=2200",
+      "role": "user",
+      "status": "active",
+      "password": "12"
+    },
+    {
+      "id": 16,
+      "name": "Сагидуллин Эрнест Рустемович",
+      "info": "mm",
+      "birthdate": "2023-10-24",
+      "email": "rsage@gmail.com",
+      "photo": "https://w.forfun.com/fetch/17/17d767857f1841474ccace158115b032.jpeg?w=2200",
+      "role": "user",
+      "status": "active",
+      "password": "1"
     }
   ]
 }

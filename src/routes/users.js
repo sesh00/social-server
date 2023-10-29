@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs');
 
-module.exports = (usersData, friendsData, newsData) => {
+module.exports = (usersData, friendsData, newsData, io) => {
     const getFriendsByUserId = (userId) => {
         return friendsData.friends
             .filter(friendship => friendship.userId === userId)
@@ -59,6 +59,8 @@ module.exports = (usersData, friendsData, newsData) => {
                     res.status(500).send('Internal Server Error');
                 } else {
                     res.status(200).json({ success: true, message: 'News published successfully' });
+                    io.emit('news', { user: userId, text: content });
+
                 }
             });
         } else {
@@ -150,7 +152,11 @@ module.exports = (usersData, friendsData, newsData) => {
                 return { ...friend, news };
             });
 
-            res.json({ user, friends: friendsWithNews });
+            const transformedNews = newsData.news
+                .filter(ne => ne.userId === userId)
+                .map(ne => ({ user: user, text: ne.text }));
+
+            res.json({ user: user, friends: friendsWithNews, news: transformedNews });
         } else {
             res.status(404).json({ error: 'User not found' });
         }

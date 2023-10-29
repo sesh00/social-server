@@ -43,6 +43,7 @@
     "raw-body": "^2.5.2",
     "safe-buffer": "^5.2.1",
     "safer-buffer": "^2.1.2",
+    "socket.io": "^4.7.2",
     "stream": "^0.0.2",
     "stream-http": "^3.2.0",
     "url": "^0.11.3",

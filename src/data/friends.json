@@ -34,6 +34,11 @@
       "id": 10,
       "userId": 4,
       "friendId": 5
+    },
+    {
+      "id": 8,
+      "userId": 2,
+      "friendId": 5
     }
   ]
 }

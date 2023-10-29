@@ -20,6 +20,24 @@ module.exports = (usersData, friendsData, newsData) => {
         res.render('users', { users: usersData.users });
     });
 
+    router.get('/:id/details', (req, res) => {
+        const userId = parseInt(req.params.id);
+        const user = usersData.users.find(user => user.id === userId);
+        if (user) {
+            const userFriends = getFriendsByUserId(userId);
+            const userNews = getNewsByFriendsIds(userFriends.map(friend => friend.id));
+
+            const friendsWithNews = userFriends.map(friend => {
+                const news = userNews.filter(newsItem => newsItem.userId === friend.id);
+                return { ...friend, news };
+            });
+
+            res.json({ user, friends: friendsWithNews });
+        } else {
+            res.status(404).json({ error: 'User not found' });
+        }
+    });
+
     router.get('/:id', (req, res) => {
         const userId = parseInt(req.params.id);
         const user = usersData.users.find(user => user.id === userId);

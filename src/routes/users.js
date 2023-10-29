@@ -16,6 +16,69 @@ module.exports = (usersData, friendsData, newsData) => {
         return newsData.news.filter(newsItem => friendIds.includes(newsItem.userId));
     };
 
+
+    router.post('/:userId/friends', (req, res) => {
+        const currentUserId = parseInt(req.body.currentId);
+        const friendId = parseInt(req.body.friendId);
+
+        if (currentUserId && friendId) {
+            console.log("f")
+            const existingFriendship = friendsData.friends.find(
+                (friendship) => friendship.userId === currentUserId && friendship.friendId === friendId
+            );
+
+            if (existingFriendship) {
+                return res.status(400).json({ error: 'User is already your friend' });
+            }
+
+            const newFriendship = {
+                userId: currentUserId,
+                friendId: friendId,
+            };
+
+            friendsData.friends.push(newFriendship);
+
+            fs.writeFile('src/data/friends.json', JSON.stringify(friendsData, null, 2), (err) => {
+                if (err) {
+                    console.error('Error writing to friends.json', err);
+                    res.status(500).send('Internal Server Error');
+                } else {
+                    res.status(200).json({ success: true, message: 'Friend added successfully' });
+                }
+            });
+        } else {
+            res.status(400).json({ error: 'Invalid user or friend ID' });
+        }
+    });
+
+    router.post('/:userId/friends/:friendId', (req, res) => {
+        const currentUserId = parseInt(req.body.currentId);
+        const friendId = parseInt(req.body.friendId);
+
+        if (currentUserId && friendId) {
+            const friendshipIndex = friendsData.friends.findIndex(
+                (friendship) => friendship.userId === currentUserId && friendship.friendId === friendId
+            );
+
+            if (friendshipIndex !== -1) {
+                friendsData.friends.splice(friendshipIndex, 1);
+
+                fs.writeFile('src/data/friends.json', JSON.stringify(friendsData, null, 2), (err) => {
+                    if (err) {
+                        console.error('Error writing to friends.json', err);
+                        res.status(500).send('Internal Server Error');
+                    } else {
+                        res.status(200).json({ success: true, message: 'Friend removed successfully' });
+                    }
+                });
+            } else {
+                res.status(404).json({ error: 'Friend not found' });
+            }
+        } else {
+            res.status(400).json({ error: 'Invalid user or friend ID' });
+        }
+    });
+
     router.get('/view', (req, res) => {
         res.render('users', { users: usersData.users });
     });
@@ -131,3 +194,4 @@ module.exports = (usersData, friendsData, newsData) => {
 
     return router;
 };
+

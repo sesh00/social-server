@@ -21,21 +21,6 @@
       "friendId": 5
     },
     {
-      "id": 5,
-      "userId": 2,
-      "friendId": 3
-    },
-    {
-      "id": 6,
-      "userId": 2,
-      "friendId": 4
-    },
-    {
-      "id": 7,
-      "userId": 2,
-      "friendId": 5
-    },
-    {
       "id": 8,
       "userId": 3,
       "friendId": 4
@@ -49,6 +34,18 @@
       "id": 10,
       "userId": 4,
       "friendId": 5
+    },
+    {
+      "userId": 6,
+      "friendId": 2
+    },
+    {
+      "userId": 6,
+      "friendId": 3
+    },
+    {
+      "userId": 6,
+      "friendId": 4
     }
   ]
 }

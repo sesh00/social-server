@@ -16,11 +16,6 @@
       "friendId": 4
     },
     {
-      "id": 4,
-      "userId": 1,
-      "friendId": 5
-    },
-    {
       "id": 8,
       "userId": 3,
       "friendId": 4
@@ -39,6 +34,51 @@
       "id": 8,
       "userId": 2,
       "friendId": 5
+    },
+    {
+      "id": 9,
+      "userId": 6,
+      "friendId": 3
+    },
+    {
+      "id": 10,
+      "userId": 2,
+      "friendId": 4
+    },
+    {
+      "id": 10,
+      "userId": 2,
+      "friendId": 1
+    },
+    {
+      "id": 11,
+      "userId": 3,
+      "friendId": 2
+    },
+    {
+      "id": 12,
+      "userId": 4,
+      "friendId": 4
+    },
+    {
+      "id": 13,
+      "userId": 4,
+      "friendId": 2
+    },
+    {
+      "id": 14,
+      "userId": 5,
+      "friendId": 1
+    },
+    {
+      "id": 15,
+      "userId": 5,
+      "friendId": 2
+    },
+    {
+      "id": 16,
+      "userId": 5,
+      "friendId": 3
     }
   ]
 }

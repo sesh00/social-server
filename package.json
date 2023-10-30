@@ -5,13 +5,16 @@
   "scripts": {
     "build-webpack": "concurrently  \"webpack --config src/webpack.config.js\" \"npm run start-server\"",
     "build-gulp": "concurrently \"gulp --gulpfile src/gulpfile.js\" \"npm run start-server\"",
-    "start-server": "node server.js"
+    "start-server": "node server.js",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@sentry/node": "^7.76.0",
+    "@sentry/profiling-node": "^1.2.1",
     "async_hooks": "^1.0.0",
     "body-parser": "^1.20.2",
     "buffer": "^6.0.3",
@@ -33,6 +36,7 @@
     "gulp-rename": "^2.0.0",
     "gulp-uglify": "^3.0.2",
     "http": "^0.0.1-security",
+    "jest": "^29.7.0",
     "jquery": "^3.7.1",
     "less": "^4.2.0",
     "on-finished": "^2.4.1",
@@ -46,6 +50,7 @@
     "socket.io": "^4.7.2",
     "stream": "^0.0.2",
     "stream-http": "^3.2.0",
+    "supertest": "^6.3.3",
     "url": "^0.11.3",
     "zlib": "^1.0.5"
   },

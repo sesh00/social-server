@@ -5,66 +5,55 @@
       "name": "Дейенерис Таргариен",
       "info": "Персонаж серии фэнтези-романов «Песнь Льда и Огня»",
       "birthdate": "2023-10-21",
-      "email": "alisa@example.com",
+      "email": "user1@example.com",
       "photo": "https://w.forfun.com/fetch/72/72b32c2fac9ff067187b90a78fbd2083.jpeg",
       "role": "admin",
       "status": "active",
-      "password": "password4"
+      "password": "user1"
     },
     {
       "id": 2,
       "name": "Джон Сноу",
       "info": "Персонаж серии фэнтези-романов «Песнь Льда и Огня»",
       "birthdate": "2023-10-11",
-      "email": "alisa@example.com",
+      "email": "user2@example.com",
       "photo": "https://w.forfun.com/fetch/bf/bfcfbdcc0d100a30c11177d0bf0c0be5.jpeg",
       "role": "admin",
       "status": "active",
-      "password": "password2"
+      "password": "user2"
     },
     {
       "id": 3,
       "name": "Тирион",
       "info": "Персонаж серии фэнтези-романов «Песнь Льда и Огня»",
       "birthdate": "2023-10-10",
-      "email": "alisa@example.com",
+      "email": "user3@example.com",
       "photo": "https://w.forfun.com/fetch/ce/ce279a24d286a3e8b21eef1f48af2aaf.jpeg",
       "role": "user",
       "status": "active",
-      "password": "password3"
+      "password": "user3"
     },
     {
       "id": 4,
       "name": "Эддард Старк",
       "info": "Персонаж серии фэнтези-романов «Песнь Льда и Огня»",
       "birthdate": "2023-10-13",
-      "email": "alisa@example.com",
+      "email": "user4@example.com",
       "photo": "https://w.forfun.com/fetch/c7/c72bbba65a677df8ef22edb2161686a4.jpeg",
       "role": "user",
       "status": "active",
-      "password": "password4"
+      "password": "user4"
     },
     {
       "id": 5,
       "name": "Серсея Ланнистер",
       "info": "Персонаж серии фэнтези-романов «Песнь Льда и Огня»",
       "birthdate": "2023-10-10",
-      "email": "alisa@example.com",
+      "email": "user5@example.com",
       "photo": "https://w.forfun.com/fetch/2f/2feee713e0ba476663856cba5d539405.jpeg",
       "role": "user",
       "status": "active",
-      "password": "password4"
-    },
-    {
-      "id": 6,
-      "name": "э",
-      "info": "это ",
-      "birthdate": "2023-10-15",
-      "email": "ernestrsag@egmail.com",
-      "photo": "https://w.forfun.com/fetch/17/17d767857f1841474ccace158115b032.jpeg",
-      "role": "user",
-      "status": "banned",
-      "password": "12"
+      "password": "user5"
     }
   ]
 }

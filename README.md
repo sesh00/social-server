@@ -1,1 +1,1 @@
-# WebLab3Social
+# social-server
